@@ -11,7 +11,7 @@ fun main() {
     val greenTriangle = Triangle("green", 5, 7, 9)
     val blackTriangle = Triangle("black", 6, 12, 10)
 
-    val figuresList = mutableListOf(readCircle, greenCircle, redRectangle, blackRectangle, greenTriangle, blackTriangle)
+    val figuresList = listOf(readCircle, greenCircle, redRectangle, blackRectangle, greenTriangle, blackTriangle)
 
     println(
         "Суммарная площадь всех красных фигур составляет ${
@@ -31,7 +31,7 @@ fun main() {
     )
 }
 
-fun countTotalAreaByColor(figuresList: MutableList<Figure>, color: String): Double {
+fun countTotalAreaByColor(figuresList: List<Figure>, color: String): Double {
     var totalArea = 0.0
     for (i in figuresList.indices) {
         if (figuresList[i].color != color) continue
@@ -40,7 +40,7 @@ fun countTotalAreaByColor(figuresList: MutableList<Figure>, color: String): Doub
     return totalArea
 }
 
-fun countTotalPerimeterByColor(figuresList: MutableList<Figure>, color: String): Double {
+fun countTotalPerimeterByColor(figuresList: List<Figure>, color: String): Double {
     var totalPerimeter = 0.0
     for (i in figuresList.indices) {
         if (figuresList[i].color != color) continue
@@ -63,12 +63,12 @@ class Circle(override val color: String, val radius: Int) : Figure() {
 
 class Rectangle(override val color: String, val width: Int, val height: Int) : Figure() {
     override fun getArea() = (width * height).toDouble()
-    override fun getPerimeter() = ((width + height) * 2).toDouble()
+    override fun getPerimeter() = (width + height) * 2.0
 }
 
 class Triangle(override val color: String, val side1: Int, val side2: Int, val side3: Int) : Figure() {
     override fun getArea(): Double {
-        val p: Double = (side1 + side2 + side3) / 2.toDouble()
+        val p: Double = (side1 + side2 + side3) / 2.0
         return sqrt(p * (p - side1) * (p - side2) * (p - side3))
     }
 
