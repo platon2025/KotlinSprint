@@ -3,13 +3,16 @@ package lesson_14
 /** Created by Platon2025 */
 import kotlin.math.*
 
+const val COLOR_RED = "red"
+const val COLOR_GREEN = "green"
+const val COLOR_BLACK = "black"
 fun main() {
-    val readCircle = Circle("red", 5)
-    val greenCircle = Circle("green", 8)
-    val redRectangle = Rectangle("red", 12, 4)
-    val blackRectangle = Rectangle("black", 4, 7)
-    val greenTriangle = Triangle("green", 5, 7, 9)
-    val blackTriangle = Triangle("black", 6, 12, 10)
+    val readCircle = Circle(COLOR_RED, 5)
+    val greenCircle = Circle(COLOR_GREEN, 8)
+    val redRectangle = Rectangle(COLOR_RED, 12, 4)
+    val blackRectangle = Rectangle(COLOR_BLACK, 4, 7)
+    val greenTriangle = Triangle(COLOR_GREEN, 5, 7, 9)
+    val blackTriangle = Triangle(COLOR_BLACK, 6, 12, 10)
 
     val figuresList = listOf(readCircle, greenCircle, redRectangle, blackRectangle, greenTriangle, blackTriangle)
 
@@ -17,7 +20,7 @@ fun main() {
         "Суммарная площадь всех красных фигур составляет ${
             String.format(
                 "%.2f",
-                countTotalAreaByColor(figuresList, "red")
+                countTotalAreaByColor(figuresList, COLOR_RED)
             )
         }"
     )
@@ -25,7 +28,7 @@ fun main() {
         "Суммарный периметр всех красных фигур составляет ${
             String.format(
                 "%.2f",
-                countTotalPerimeterByColor(figuresList, "red")
+                countTotalPerimeterByColor(figuresList, COLOR_RED)
             )
         }"
     )
