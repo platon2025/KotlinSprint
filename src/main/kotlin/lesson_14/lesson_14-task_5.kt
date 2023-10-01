@@ -6,6 +6,7 @@ import kotlin.math.*
 const val COLOR_RED = "red"
 const val COLOR_GREEN = "green"
 const val COLOR_BLACK = "black"
+
 fun main() {
     val readCircle = Circle(COLOR_RED, 5)
     val greenCircle = Circle(COLOR_GREEN, 8)
