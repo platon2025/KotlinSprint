@@ -11,7 +11,7 @@ interface PassengerTransport {
     val maxPassengers: Int
     fun go(passengers: Int): Map<String, Int> =
         if (passengers <= maxPassengers) {
-            println("$name перевез $passengers пассажиров")
+            println("$name перевез $passengers пассажиров.")
             mapOf(Pair("passengers", passengers))
         } else {
             println("$name не смог взять на борт $passengers пассажиров. Поездка не состоялась.")
@@ -26,10 +26,10 @@ interface CargoTransport {
     val maxTonnage: Int
     fun go(passengers: Int, tonnage: Int): Map<String, Int> =
         if (passengers <= maxPassengers && tonnage <= maxTonnage) {
-            println("$name перевез $passengers пассажиров и $tonnage тонн груза")
+            println("$name перевез $passengers пассажиров и $tonnage тонн груза.")
             mapOf(Pair("passengers", passengers), Pair("tonnage", tonnage))
         } else {
-            println("$name не смог перевезти $passengers пассажиров и $tonnage тонн груза")
+            println("$name не смог взять на борт $passengers пассажиров и $tonnage тонн груза. Поездка не состоялась.")
             mapOf(Pair("passengers", 0), Pair("tonnage", 0))
         }
 
@@ -68,7 +68,7 @@ fun printTripResult(task: Map<String, Int>, completed: Map<String, Int>) {
             task["tonnage"]?.minus(
                 completed["tonnage"]!!
             )
-        } тонн груза\n"
+        } тонн груза.\n"
     )
 }
 
