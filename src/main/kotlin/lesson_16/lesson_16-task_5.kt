@@ -29,7 +29,7 @@ class Fighter(val name: String, var health: Int, var power: Int) {
     }
 
     fun strike(user: String, damageLevel: Int = power) {
-        println("$name нанёс урон бойцу $user силой $power")
+        println("$name нанёс урон бойцу $user силой $damageLevel")
     }
 }
 
