@@ -35,6 +35,7 @@ class Fighter(val name: String, var health: Int, var power: Int) {
 
 fun main() {
     val fighter = Fighter("Duke Nukem", 100, 30)
+    println("Уровень здоровья: ${fighter.health}, сила : ${fighter.power}, способность лечиться: ${fighter.canGetTreatment}")
     fighter.strike("Sam Stone")
     fighter.getDamage(30)
     fighter.getDamage(25)
@@ -43,4 +44,5 @@ fun main() {
     fighter.getTreatment(20)
     fighter.getDamage(25)
     fighter.getDamage(20)
+    println("Уровень здоровья: ${fighter.health}, сила : ${fighter.power}, способность лечиться: ${fighter.canGetTreatment}")
 }
