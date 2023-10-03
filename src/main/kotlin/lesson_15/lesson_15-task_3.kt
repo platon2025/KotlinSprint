@@ -2,10 +2,10 @@ package lesson_15
 
 /** Created by Platon2025 */
 
-const val STATUS_USER = "Польователь"
+const val STATUS_USER = "Пользователь"
 const val STATUS_ADMIN = "Администратор"
 
-abstract class Unit(val userName: String, val userStatus: String) {
+abstract class BaseUser(val userName: String, val userStatus: String) {
     fun readMessage() {
         println("$userStatus $userName читает сообщение")
     }
@@ -15,8 +15,8 @@ abstract class Unit(val userName: String, val userStatus: String) {
     }
 }
 
-class User(userName: String, userStatus: String = STATUS_USER) : Unit(userName, userStatus)
-class Admin(userName: String, userStatus: String = STATUS_ADMIN) : Unit(userName, userStatus) {
+class User(userName: String, userStatus: String = STATUS_USER) : BaseUser(userName, userStatus)
+class Admin(userName: String, userStatus: String = STATUS_ADMIN) : BaseUser(userName, userStatus) {
     fun deleteMessage() {
         println("$userStatus $userName удаляет сообщение")
     }
