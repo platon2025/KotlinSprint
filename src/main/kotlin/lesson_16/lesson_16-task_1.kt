@@ -10,5 +10,5 @@ class Dice(private val score: Int = (MIN_SCORE..MAX_SCORE).random()) {
 
 fun main() {
     val dice = Dice()
-    println("${dice.getScore()}")
+    println(dice.getScore())
 }
