@@ -5,7 +5,7 @@ package lesson_15
 const val STATUS_USER = "Пользователь"
 const val STATUS_ADMIN = "Администратор"
 
-abstract class BaseUser(val userName: String, val userStatus: String) {
+abstract class BaseUser2(val userName: String, val userStatus: String) {
     fun readMessage() {
         println("$userStatus $userName читает сообщение")
     }
@@ -15,8 +15,8 @@ abstract class BaseUser(val userName: String, val userStatus: String) {
     }
 }
 
-class User(userName: String, userStatus: String = STATUS_USER) : BaseUser(userName, userStatus)
-class Admin(userName: String, userStatus: String = STATUS_ADMIN) : BaseUser(userName, userStatus) {
+class User(userName: String, userStatus: String = STATUS_USER) : BaseUser2(userName, userStatus)
+class Admin(userName: String, userStatus: String = STATUS_ADMIN) : BaseUser2(userName, userStatus) {
     fun deleteMessage() {
         println("$userStatus $userName удаляет сообщение")
     }
