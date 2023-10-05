@@ -19,19 +19,19 @@ open class Animal(val name: String) {
 
 class Fox(name: String) : Animal(name) {
     override fun eat() {
-        println("$name ест ягоды .. а это точно про лису?")
+        println("$name - ест ягоды .. а это точно про лису?")
     }
 }
 
 class Dog(name: String) : Animal(name) {
     override fun eat() {
-        println("$name грызёт кости")
+        println("$name - грызёт кости")
     }
 }
 
 class Cat(name: String) : Animal(name) {
     override fun eat() {
-        println("$name ест рыбу")
+        println("$name - ест рыбу")
     }
 }
 
