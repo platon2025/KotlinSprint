@@ -1,17 +1,17 @@
 package lesson_18
 
 /** Created by Platon2025 */
-open class Shape {
+abstract class Shape {
     fun <T> draw(shape: String, x: T, y: T) {
         println("Отрисовывается $shape с координатами x=$x y=$y")
     }
 }
 
-class Circle() : Shape()
+class Circle : Shape()
 
-class Foursquare() : Shape()
+class Foursquare : Shape()
 
-class Point() : Shape()
+class Point : Shape()
 
 class Screen {
     fun <T> draw(shape: Shape, x: T, y: T) {
