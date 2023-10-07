@@ -12,8 +12,8 @@ abstract class Order {
     }
 }
 
-class SingleOrder: Order()
-class BulkOrder: Order()
+class SingleOrder : Order()
+class BulkOrder : Order()
 
 fun main() {
     val singleOrder: Order = SingleOrder()
