@@ -3,7 +3,7 @@ package lesson_18
 /** Created by Platon2
  *
  */
-open class Animal(val name: String) {
+abstract class Animal(val name: String) {
     fun play() {
         println("$name играет")
     }
