@@ -21,4 +21,5 @@ fun main() {
 
     singleOrder.printOrderInfo(54, "Телескоп")
     bulkOrder.printOrderInfo(113, listOf("Зубочистки, Пассатижи"))
+
 }
