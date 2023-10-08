@@ -10,7 +10,6 @@ class SingleOrder(val orderNumber: Int, val orderContent: String) : Order() {
     override fun getOrderInfo(): String {
         return "Заказ #$orderNumber. Заказан товар: $orderContent."
     }
-
 }
 
 class BulkOrder(val orderNumber: Int, val orderContent: List<String>) : Order() {
