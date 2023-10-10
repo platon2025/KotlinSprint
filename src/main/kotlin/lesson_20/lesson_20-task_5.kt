@@ -28,5 +28,4 @@ fun main() {
     robot.say(phrase)
     robot.setModifier(modifier)
     robot.say(phrase)
-
 }
