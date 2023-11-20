@@ -1,36 +1,21 @@
 package lesson_22
 
-import java.util.*
-
 fun main() {
     val alphaCentauri = GalacticGuide(
         "Alpha Centauri",
         "Ближайшая к Земле звёздная система",
+        4.367,
         null,
-        4.367
     )
-    alphaCentauri.printInfo()
+    val (name, description, distance) = alphaCentauri
+    println("Название объекта/события: $name")
+    println("Описание: $description")
+    println("Расстояние от Земли: $distance св.лет")
 }
 
 data class GalacticGuide(
-    private val name: String,
-    private val description: String,
-    private val date: Long?, //timestamp
-    private val distance: Double,
-) {
-    fun printInfo() {
-        println("Название объекта/события: ${getName()}")
-        println("Описание: ${getDescription()}")
-        if (date != null) println("Дата события: ${(getDate())}")
-        println("Расстояние от Земли: ${getDistance()} св.лет")
-    }
-
-    fun getName(): String = name
-    fun getDescription(): String = description
-    fun getDate(): Date? {
-        return if (date != null) Date(date)
-        else null
-    }
-
-    fun getDistance(): Double = distance
-}
+    val name: String,
+    val description: String,
+    val distance: Double,
+    val date: Long? = null,
+)
