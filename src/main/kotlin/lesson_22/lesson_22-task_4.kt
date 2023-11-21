@@ -1,15 +1,29 @@
 package lesson_22
 
-data class MainScreenState(val data: String, var isLoading: Boolean = false) {
-    init {
-        println("state = $data")
-    }
-}
-
 fun main() {
-    var screenState = MainScreenState("noData")
-    screenState = loadData(screenState, "dataLoading")
-    screenState = loadData(screenState, "dataLoaded")
+    val viewModel = MainScreenViewModel()
+    viewModel.loadData("newData")
 }
 
-fun loadData(screenState: MainScreenState, data: String): MainScreenState = screenState.copy(data = data)
+class MainScreenViewModel() {
+
+    private var screenState = MainScreenState("noData")
+    private var isLoading = false
+        set(value) {
+            field = value
+            if (value) screenState = screenState.copy(data = "loadingData")
+        }
+
+    fun loadData(data: String) {
+        isLoading = true
+        screenState = screenState.copy(data = data)
+        isLoading = false
+    }
+
+    data class MainScreenState(val data: String, var isLoading: Boolean = false) {
+        init {
+            println("screenState = $data")
+        }
+    }
+
+}
