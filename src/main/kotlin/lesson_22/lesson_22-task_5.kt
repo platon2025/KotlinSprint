@@ -1,16 +1,17 @@
+//More uses: https://kotlinlang.org/docs/destructuring-declarations.html
+
 package lesson_22
 
 fun main() {
-    val alphaCentauri = GalacticGuide(
+    val guide = GalacticGuide(
         "Alpha Centauri",
         "Ближайшая к Земле звёздная система",
         4.367,
         null,
     )
-    val (name, description, distance) = alphaCentauri
-    println("Название объекта/события: $name")
-    println("Описание: $description")
-    println("Расстояние от Земли: $distance св.лет")
+    println("Название объекта/события: ${guide.component1()}")
+    println("Описание: ${guide.component2()}")
+    println("Расстояние от Земли: ${guide.component3()} св.лет")
 }
 
 data class GalacticGuide(
