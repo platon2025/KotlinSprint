@@ -5,24 +5,18 @@ fun main() {
     viewModel.loadData("newData")
 }
 
-class MainScreenViewModel() {
+class MainScreenViewModel {
 
     private var screenState = MainScreenState("noData")
-    private var isLoading = false
-        set(value) {
-            field = value
-            if (value) screenState = screenState.copy(data = "loadingData")
-        }
 
     fun loadData(data: String) {
-        isLoading = true
-        screenState = screenState.copy(data = data)
-        isLoading = false
+        screenState = screenState.copy(isLoading = true)
+        screenState = screenState.copy(data = data, isLoading = false)
     }
 
     data class MainScreenState(val data: String, var isLoading: Boolean = false) {
         init {
-            println("screenState = $data")
+            println("screenState = $data, isLoading = $isLoading")
         }
     }
 
